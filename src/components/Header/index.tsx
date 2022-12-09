@@ -1,37 +1,51 @@
-import React ,{ useState, useEffect } from 'react';
-import {Wrapper, Title, Container, Column, Row} from './style';
-import { Input } from '../Input';
-import { Player } from '../Player';
-import ReactPlayer from 'react-player'
-import  "youtube-video-js"
+import React,{Component}from "react";
+import { FaSearch} from 'react-icons/fa';
 
-export const Header = (props:any) => {
+import {Input, Wrapper, Title,TitleRed, Container,Row, Button, InputContainer} from './style'
 
-    return(<>
-        <Wrapper>
-            <Container>
+class Header  extends React.Component <{onSearch:any}>{
+    state={title:""}
+
+    onSearchChanged = (event:any) =>{
+
+        const _title = event.target.value
+
+        this.setState({title:_title})
+    }
+
+    onSubmit = (event:any) => {
+        event.preventDefault()
+
+        console.log(this.state.title)
+
+        this.props.onSearch(this.state.title)
+    }
+
+
+    render() {
+        return(<>
+            <Wrapper>
+            <Container onSubmit={this.onSubmit}>
                 <Row>
-                    <Title>Youtube Watch Party</Title>   
-                    <Input/>          
+                    <Title>Youtube Watch  <TitleRed>Party</TitleRed></Title>
+                    <InputContainer>
+                    <Input
+                        value={this.state.title}
+                        onChange={this.onSearchChanged} 
+                        id="input-search" 
+                        type="text" 
+                        placeholder="O que deseja busacar?"/>
+                        <Button onClick={this.onSubmit}><FaSearch/></Button>
+                        </InputContainer>
+                        
+                                     
                 </Row>
             </Container>   
         </Wrapper>
-        <ReactPlayer url="https://www.youtube.com/watch?v=co00VsMcOjg" width="100%" height="500px" />
-        <Player></Player>
-        
 
-        {/* <youtube-video
-    width="980"
-    height="360"
-    src="https://www.youtube.com/watch?v=co00VsMcOjg"
-    autoplay
-    controls
-/> */}
-        </>   
-    )
+            </>
+        )
+    }
 }
 
-
-
-
-
+export default Header
