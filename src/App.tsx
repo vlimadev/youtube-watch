@@ -102,7 +102,7 @@ onReady = () =>{
 onStart = () => {
   this.getData;
   this.setState({videoDone:true});
-   console.log("video pronto");
+   
 }
 
 onPause = () =>{

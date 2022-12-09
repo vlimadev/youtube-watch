@@ -14,7 +14,7 @@ export const VideoError =() =>{
                 <br/>
                 <TextContent>O video selecionado não pode ser reproduzido.
                     <br/>
-                    Não deixe a diversão acabar e pesquise outro video.
+                    Não deixe a diversão acabar e pesquise outro.
                 </TextContent>
             </Title>
            

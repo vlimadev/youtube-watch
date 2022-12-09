@@ -11,7 +11,8 @@ function getCss(imageUrl: any){
         backgroundPosition: "center",
         height: "100%",
         width:"450px",
-        borderRadius:"20px", 
+        borderRadius:"20px",
+        cursor: "pointer", 
     };
     return _styles;
 }

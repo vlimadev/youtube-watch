@@ -34,7 +34,7 @@ class Header  extends React.Component <{onSearch:any}>{
                         onChange={this.onSearchChanged} 
                         id="input-search" 
                         type="text" 
-                        placeholder="O que deseja busacar?"/>
+                        placeholder="Insira o que deseja buscar ou cole um link"/>
                         <Button onClick={this.onSubmit}><FaSearch/></Button>
                         </InputContainer>
                         
